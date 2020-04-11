@@ -1,7 +1,7 @@
 package graph;
 
-public class directedGraph implements Graph {
-    public directedGraph() {
+public class DirectedGraph implements Graph {
+    public DirectedGraph() {
     }
 
     @Override
