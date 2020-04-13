@@ -2,13 +2,14 @@ package graph;
 
 import Link.Bag;
 
-public class UndirectedGraph implements Graph {
+public class UndirectedGraph extends Graph {
     private final int V;
     private int E;
     private Bag<Integer>[] adj;
 
 
     public UndirectedGraph(int V) {
+        super(V);
         this.V=V;
         this.E=0;
         adj=(Bag<Integer>[]) new Bag[V];
