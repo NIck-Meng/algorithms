@@ -1,5 +1,7 @@
 package graph;
 
+import Standardlibraries.StdOut;
+
 import java.util.Stack;
 
 public class DepthFirstPaths extends Paths{
@@ -16,6 +18,7 @@ public class DepthFirstPaths extends Paths{
     private void dfs(Graph G,int v){
         marked[v]=true;
         for(int w:G.adj(v)){
+            StdOut.println(v+" 的相邻边 "+w+" 开始");
             if(!marked[w]){
                 edgeTo[w]=v;
                 dfs(G,w);
@@ -39,4 +42,24 @@ public class DepthFirstPaths extends Paths{
         path.push(s);
         return path;
     }
+
+    public static void main(String[] args) {
+        GraphIn graphIn = new GraphIn(6);
+        graphIn.addEdge(0,5);
+        graphIn.addEdge(2,4);
+        graphIn.addEdge(2,3);
+        graphIn.addEdge(1,2);
+        graphIn.addEdge(0,1);
+        graphIn.addEdge(3,4);
+        graphIn.addEdge(3,5);
+        graphIn.addEdge(0,2);
+
+        DepthFirstPaths depthFirstPaths = new DepthFirstPaths(graphIn,0);
+        Iterable<Integer> path = depthFirstPaths.pathTo(5);
+        StdOut.println(path);
+
+    }
+
+
+
 }
