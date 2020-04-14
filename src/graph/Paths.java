@@ -1,8 +1,11 @@
 package graph;
 
-public class Paths {
+abstract class Paths {
     public Paths(Graph G,int s) {
+        /*
+        * 在G中找出所有起点为s的路径
+        * */
     }
-    boolean hasPahtTo(int v){return false;}
-    Iterable<Integer> pathTo(int v){return null;}
+    abstract boolean hasPahtTo(int v);
+    abstract Iterable<Integer> pathTo(int v);
 }
