@@ -6,6 +6,6 @@ abstract class Paths {
         * 在G中找出所有起点为s的路径
         * */
     }
-    abstract boolean hasPahtTo(int v);
+    abstract boolean hasPathTo(int v);
     abstract Iterable<Integer> pathTo(int v);
 }
